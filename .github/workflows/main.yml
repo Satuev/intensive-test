@@ -11,27 +11,36 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: NPM or Yarn install with caching
-        uses: bahmutov/npm-install@v1.6.0
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
         with:
-          install-command: yarn
+          node-version: 16.x
 
       - name: Install dependencies
-        run: yarn install
-
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+          
       - name: Check formatting
-        run: yarn prettier-check
-      
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: prettier-check
+          
       - name: Lint
-        run: yarn lint
-
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: lint
+          
       - name: Test
-        run: yarn test
-      
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
+          
       - name: Build
-        run: yarn build
-        
-        
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+          
