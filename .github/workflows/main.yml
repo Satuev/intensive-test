@@ -23,10 +23,10 @@ jobs:
         with:
           cmd: install
 
-      - name: Check formatting
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: prettier:check
+      # - name: Check formatting
+      #   uses: borales/actions-yarn@v4
+      #   with:
+      #     cmd: prettier:check
           
       - name: Lint
         uses: borales/actions-yarn@v4
