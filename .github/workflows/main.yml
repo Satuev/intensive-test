@@ -14,8 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Yarn Setup
-        uses: DerYeger/yarn-setup-action@v1.0.1
+      - name: NPM or Yarn install with caching
+        uses: bahmutov/npm-install@v1.6.0
+        with:
+          install-command: yarn
 
       - name: Install dependencies
         run: yarn install
