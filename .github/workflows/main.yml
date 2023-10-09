@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Test
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,12 +18,27 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Run install
+      - name: Install deps
         uses: borales/actions-yarn@v4
         with:
-          cmd: install # will run `yarn install` command
+          cmd: install
 
-      - name: Test the app
+      - name: Check formatting
         uses: borales/actions-yarn@v4
         with:
-          cmd: test # will run `yarn test` command
+          cmd: prettier:check
+          
+      - name: Lint
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: lint
+          
+      - name: Test
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
+          
+      - name: Build
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
