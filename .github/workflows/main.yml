@@ -19,19 +19,18 @@ jobs:
         with:
           node-version: 16.x
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          install-command: yarn --frozen-lockfile --silent
+      - name: NPM or Yarn install with caching
+        uses: bahmutov/npm-install@v1.6.0
           
       - name: Check formatting
-        run: yarn prettier-check
+        run: npm run prettier-check
           
       - name: Lint
-        run: yarn lint
+        run: npm run lint
           
       - name: Test
-        run: yarn test
+        run: npm run test
           
       - name: Build
-        run: yarn build
+        run: npm run build
           
