@@ -24,7 +24,7 @@ jobs:
           install-command: yarn --frozen-lockfile --silent
           
       - name: Install dependencies
-        run: yarn install
+        run: yarn ci
         
       - name: Check formatting
         run: yarn prettier-check
