@@ -72,7 +72,7 @@ jobs:
             # Получаем последние изменения из репозитория
             git fetch
             # Принудительно обновляем код проекта до последней версии
-            git reset --hard origin/main
+            git reset --hard origin/master
             # Устанавливаем зависимости
             yarn install
             # Собираем проект
