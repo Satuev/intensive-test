@@ -8,7 +8,7 @@ function App() {
 
     return (
         <>
-            <h1>Ваха муха ву хьо???</h1>
+            <h1 style={{ color: 'green' }}>Ваха муха ву хьо???</h1>
             <h1>intensive-test</h1>
             <div className="card">
                 <button onClick={() => setCount1((count) => count + 1)}>
