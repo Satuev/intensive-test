@@ -82,4 +82,4 @@ jobs:
             docker stop intensive-test-build || true
             docker rm intensive-test-build || true
             # Запускаем новый контейнер из обновленного образа
-            docker run -dp 80:80 intensive-test-build
+            docker run -dp 80:80 --restart=unless-stopped intensive-test-build
