@@ -76,7 +76,7 @@ jobs:
             git fetch
             # Принудительно обновляем код проекта до последней версии
             git reset --hard origin/master
-            # Устанавливаем зависимости
-            yarn install
-            # Собираем проект
-            yarn build
+            # Собираем новый образ Docker
+            docker build -t intensive-test-build -f Dockerfile.build .
+            # Запускаем новый контейнер из обновленного образа
+            docker run -dp 80:80 intensive-test-build

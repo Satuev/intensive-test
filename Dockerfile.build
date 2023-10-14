@@ -1,0 +1,31 @@
+# Базовый образ с Node.js для сборки проекта
+FROM node:18.0.0 AS build
+
+# Устанавливаем рабочий каталог
+WORKDIR /app
+
+# Копируем файлы зависимостей и устанавливаем их с использованием Yarn
+COPY package.json yarn.lock ./
+RUN yarn install
+
+# Копируем все остальные файлы проекта
+COPY . .
+
+# Запускаем сборку приложение
+RUN yarn build
+
+# Базовый образ с Nginx для раздачи статических файлов
+FROM nginx:1.24.0
+
+# Копируем собранный проект из предыдущего образа
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Копируем конфигурационный файл Nginx
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Открытие порта 80 для прослушивания
+EXPOSE 80
+
+# Запуск Nginx при старте контейнера
+CMD ["nginx", "-g", "daemon off;"]
+
