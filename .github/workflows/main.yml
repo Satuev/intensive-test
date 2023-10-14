@@ -77,9 +77,10 @@ jobs:
             # Принудительно обновляем код проекта до последней версии
             git reset --hard origin/master
             # Собираем новый образ Docker
-            docker build -t intensive-test-build -f Dockerfile.build .
+            docker build -t intensive-test-img -f Dockerfile.build .
             # Остановить и удалить старый контейнер
-            docker stop intensive-test-build || true
-            docker rm intensive-test-build || true
+            docker stop intensive-test-cont || true
+            docker rm intensive-test-cont || true
+            sleep 5
             # Запускаем новый контейнер из обновленного образа
-            docker run -dp 80:80 --restart=unless-stopped intensive-test-build
+            docker run -dp 80:80 --restart=unless-stopped --name intensive-test-cont intensive-test-img
