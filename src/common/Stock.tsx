@@ -1,4 +1,3 @@
-
 type StockProps = {
     stock: boolean;
 };
@@ -36,7 +35,13 @@ const Stock = ({ stock }: StockProps) => {
                     />
                 </svg>
             )}
-            <div className={`ml-1 ${stock ? 'text-[#78A962]' : 'text-[#C94D3F]'}`}>{stock ? 'В наличии' : 'Проверить наличие'}</div>
+            <div
+                className={`ml-1 ${
+                    stock ? 'text-[#78A962]' : 'text-[#C94D3F]'
+                }`}
+            >
+                {stock ? 'В наличии' : 'Проверить наличие'}
+            </div>
         </div>
     );
 };

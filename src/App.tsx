@@ -5,31 +5,33 @@ const items = [
     {
         image: mockImage,
         rating: 4,
-        reviews: "#",
+        reviews: '#',
         reviews_count: 7,
         description:
             'Игровой ноутбук MSI Katana оборудован шестиядерным процессором Intel Core i5 11260H.',
         price: 30000.0,
         discount: 20,
-        stock: true
+        stock: true,
     },
     {
         image: mockImage,
         rating: 4,
-        reviews: "#",
+        reviews: '#',
         reviews_count: 22,
         description:
             'Игровой ноутбук MSI Katana оборудован шестиядерным процессором Intel Core i5 11260H.',
         price: 55000.0,
         discount: 10,
-        stock: false
+        stock: false,
     },
 ];
 
 function App() {
     return (
         <div className="bg-slate-300 w-screen h-screen flex justify-center items-center gap-2">
-            {items.map( item => <Card item={item}/>)}
+            {items.map((item) => (
+                <Card item={item} />
+            ))}
         </div>
     );
 }
