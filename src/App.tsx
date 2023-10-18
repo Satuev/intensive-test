@@ -1,27 +1,36 @@
-import { useState } from 'react';
-import './App.css';
-import { getSum } from './getSum';
+import Card from './components/Card';
+import mockImage from '../src/assets/mockImage.svg';
+
+const items = [
+    {
+        image: mockImage,
+        rating: 4,
+        reviews: "#",
+        reviews_count: 7,
+        description:
+            'Игровой ноутбук MSI Katana оборудован шестиядерным процессором Intel Core i5 11260H.',
+        price: 30000.0,
+        discount: 20,
+        stock: true
+    },
+    {
+        image: mockImage,
+        rating: 4,
+        reviews: "#",
+        reviews_count: 22,
+        description:
+            'Игровой ноутбук MSI Katana оборудован шестиядерным процессором Intel Core i5 11260H.',
+        price: 55000.0,
+        discount: 10,
+        stock: false
+    },
+];
 
 function App() {
-    const [count1, setCount1] = useState(0);
-    const [count2, setCount2] = useState(0);
-
     return (
-        <>
-            {/* <h1 style={{ color: 'red' }}>Ваха муха ву хьо???</h1> */}
-            {/* <h2 style={{ color: 'green' }}>Г1уроба хьо муха ву???</h2> */}
-            <h1>intensive-test</h1>
-            <div className="card">
-                <button onClick={() => setCount1((count) => count + 1)}>
-                    count is {count1}
-                </button>
-                &nbsp;
-                <button onClick={() => setCount2((count) => count + 1)}>
-                    count is {count2}
-                </button>
-            </div>
-            <h2>{getSum(count1, count2)}</h2>
-        </>
+        <div className="bg-slate-300 w-screen h-screen flex justify-center items-center gap-2">
+            {items.map( item => <Card item={item}/>)}
+        </div>
     );
 }
 
