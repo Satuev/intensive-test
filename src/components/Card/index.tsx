@@ -6,7 +6,7 @@ interface ItemProps {
         image: string;
         rating: number;
         reviews: string;
-        reviews_count: number;
+        reviewsCount: number;
         description: string;
         price: number;
         discount: number;
@@ -18,7 +18,7 @@ const Card = ({ item }: ItemProps) => {
     const {
         image,
         rating,
-        reviews_count,
+        reviewsCount,
         description,
         price,
         discount,
@@ -46,7 +46,7 @@ const Card = ({ item }: ItemProps) => {
                 <a
                     className="ml-1 text-gray-400"
                     href={reviews}
-                >{`Отзывы(${reviews_count})`}</a>
+                >{`Отзывы(${reviewsCount})`}</a>
             </div>
 
             {/* описание */}

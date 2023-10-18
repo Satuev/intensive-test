@@ -1,12 +1,12 @@
 import Card from './components/Card';
-import mockImage from '../src/assets/mockImage.svg';
+import mockImage from '../src/assets/mockImage.jpeg';
 
 const items = [
     {
         image: mockImage,
         rating: 4,
         reviews: '#',
-        reviews_count: 7,
+        reviewsCount: 7,
         description:
             'Игровой ноутбук MSI Katana оборудован шестиядерным процессором Intel Core i5 11260H.',
         price: 30000.0,
@@ -17,7 +17,7 @@ const items = [
         image: mockImage,
         rating: 4,
         reviews: '#',
-        reviews_count: 22,
+        reviewsCount: 22,
         description:
             'Игровой ноутбук MSI Katana оборудован шестиядерным процессором Intel Core i5 11260H.',
         price: 55000.0,
