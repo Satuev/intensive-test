@@ -16,7 +16,7 @@ const mockItem = {
 
 describe('Card Component', () => {
   beforeEach(() => {
-    render(<Card item={mockItem} />);
+    render(<Card {...mockItem} />);
   });
 
   test('renders image', () => {

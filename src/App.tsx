@@ -3,6 +3,7 @@ import mockImage from '../src/assets/mockImage.jpeg';
 
 const items = [
   {
+    id: 1,
     image: mockImage,
     rating: 4,
     reviews: '#',
@@ -14,6 +15,7 @@ const items = [
     stock: true,
   },
   {
+    id: 2,
     image: mockImage,
     rating: 4,
     reviews: '#',
@@ -30,7 +32,17 @@ function App() {
   return (
     <div className="bg-slate-300 w-screen h-screen flex justify-center items-center gap-2">
       {items.map((item) => (
-        <Card item={item} />
+        <Card
+          key={item.id}
+          image={item.image}
+          rating={item.rating}
+          reviewsCount={item.reviewsCount}
+          description={item.description}
+          price={item.price}
+          discount={item.discount}
+          reviews={item.reviews}
+          stock={item.stock}
+        />
       ))}
     </div>
   );

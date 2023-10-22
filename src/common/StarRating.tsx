@@ -1,6 +1,7 @@
 type StarRatingProps = {
   rating: number;
 };
+
 const StarRating = ({ rating = 0 }: StarRatingProps) => {
   return (
     <div className="flex">
